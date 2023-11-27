@@ -1,0 +1,283 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  width: 90%;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@for $i from 1 through 12 {
+  .col#{$i} {
+    margin: 1.5%;
+    width: (100%/ (12 / $i)) - 3%;
+  }
+}
+
+// Nav
+.nav-container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 1.5%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  position: fixed;
+  &-brand {
+    display: flex;
+    flex-wrap: wrap;
+    img {
+      width: 38px;
+      height: 38px;
+      margin-top: 10%;
+    }
+    h1 {
+      a {
+        text-decoration: none;
+        color: black;
+        margin-left: 7px;
+        span {
+          color: darkred;
+        }
+      }
+    }
+  }
+  &-menu {
+    a {
+      display: inline-block;
+      text-decoration: none;
+      color: black;
+      padding: 10px;
+      &:hover {
+        color: darkred;
+      }
+      &::after {
+        content: "";
+        display: flex;
+        padding-bottom: 8px;
+        border-bottom: 0.1rem solid black;
+        transform: scaleX(0);
+        transition: 0.2s linear;
+      }
+      &:hover::after {
+        transform: scaleX(0.5);
+      }
+    }
+  }
+  .profile {
+    display: flex;
+    flex-wrap: wrap;
+    i {
+      margin-right: 10px;
+      margin-left: -3px;
+    }
+  }
+}
+
+//Button
+.btn {
+  background: black;
+  color: white;
+  display: inline-block;
+  padding: 10px 30px;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: all cubic-bezier(0.165, 0.84, 0.44, 1) 1s;
+  &:hover {
+    color: wheat;
+    background: darkred;
+  }
+}
+
+.btn2 {
+  background: darkred;
+  color: wheat;
+  display: inline-block;
+  padding: 10px 30px;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: all cubic-bezier(0.165, 0.84, 0.44, 1) 1s;
+  &:hover {
+    color: white;
+    background: black;
+  }
+}
+
+//Hero
+.hero {
+  margin-left: 12%;
+  padding: 5% 0;
+}
+
+.hero-desc {
+  a {
+    margin-top: 35px;
+  }
+  span {
+    color: crimson;
+  }
+}
+
+// //About
+// .about {
+//   padding: 5% 0;
+// }
+
+// .about-desc {
+//   padding: 5%;
+//   box-shadow: 0px 1px 9px 8px #eee;
+//   border: 1px solid #b9b9b9;
+//   box-sizing: border-box;
+//   a {
+//     margin-top: 35px;
+//   }
+//   span {
+//     color: crimson;
+//   }
+// }
+
+.img-responsive {
+  width: 90%;
+}
+
+.ai-center {
+  align-items: center;
+}
+
+//Promo
+.promo {
+  align-content: center;
+  &-item {
+    box-shadow: 0px 1px 9px 8px #eee;
+    border: 1px solid #b9b9b9;
+    width: 300px;
+    border-radius: 15px;
+    box-sizing: border-box;
+    margin: 20%;
+    padding: 15px;
+    background-color: white;
+    transition: all cubic-bezier(0.165, 0.84, 0.44, 1) 1s;
+    .promo-desc {
+      text-transform: capitalize;
+    }
+    .promo-price {
+      font-size: 18px;
+    }
+    .promo-img {
+      height: 300px;
+      overflow: hidden;
+      img {
+        display: block;
+        margin: auto;
+        border-radius: 5%;
+      }
+    }
+    &:hover {
+      background: #e7e7e7;
+    }
+  }
+}
+
+.ori {
+  color: #e65454;
+  float: right;
+  text-decoration: line-through;
+}
+
+//Menu
+.menu {
+  &-item {
+    justify-content: space-between;
+    img {
+      height: 300px;
+      border-radius: 10%;
+    }
+  }
+}
+
+//Coffe
+.coffe-series {
+  align-content: center;
+  .coffe-item {
+    width: 250px;
+    box-shadow: 0px 1px 9px 8px #eee;
+    border: 1px solid #b9b9b9;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin: 20%;
+    padding: 8px;
+    transition: all cubic-bezier(0.165, 0.84, 0.44, 1) 1s;
+    .coffe-desc {
+      font-size: 15px;
+      text-transform: capitalize;
+    }
+    .coffe-price {
+      font-size: 18px;
+    }
+    .coffe-img {
+      height: 250px;
+      overflow: hidden;
+      margin: 5px;
+      border-radius: 30px;
+      img {
+        display: block;
+        margin: auto;
+      }
+    }
+
+    &:hover {
+      background: #e7e7e7;
+    }
+  }
+}
+
+//Footer
+.footer {
+  padding: 5% 0;
+  background-color: rgb(40, 40, 40);
+  color: white;
+  &-desc {
+    span {
+      color: #ff0000;
+    }
+    h3 {
+      margin-bottom: 20px;
+    }
+    p {
+      line-height: 130%;
+    }
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+      padding: 5px 0;
+      a {
+        color: wheat;
+      }
+    }
+  }
+}
